@@ -1,0 +1,63 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="rc.theme">
+
+  <!-- 'Tema RC' Zope 3 browser layer
+    Register views, viewlets and resources for this layer to make sure
+    they only apply to the 'Tema RC' theme.
+    You can also use this layer to override default Plone browser views
+    and viewlets only within the 'Tema RC' theme.
+  -->
+  <interface
+      interface=".interfaces.IRCTheme"
+      type="zope.publisher.interfaces.browser.IBrowserSkinType"
+      name="Tema RC"
+      />
+  
+  <!-- Viewlets registration -->
+  <!-- EXAMPLE (UNCOMMENT TO MAKE AVAILABLE):
+  <browser:viewlet
+      name="rc.someviewlet"
+      manager="plone.app.layout.viewlets.interfaces.IPortalFooter"
+      class=".viewlets.MyViewlet"
+      layer=".interfaces.IRCTheme"
+      permission="zope2.View"
+      />
+  -->
+
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images
+    See rc/theme/browser/images/README.txt
+    for more information about registering images as Zope 3 browser
+    resources.
+  -->
+  <browser:resourceDirectory
+      name="rc.theme.images"
+      directory="images"
+      layer=".interfaces.IRCTheme"
+      />
+
+  <!-- Resource directory for stylesheets
+    See rc/theme/browser/stylesheets/README.txt
+    for more information about registering stylesheets as Zope 3 browser
+    resources.
+  -->
+  <browser:resourceDirectory
+      name="rc.theme.stylesheets"
+      directory="stylesheets"
+      layer=".interfaces.IRCTheme"
+      />
+
+
+    <!--Page @@paginainicial-->
+    <browser:page
+        name="paginainicial"
+        for="Products.CMFCore.interfaces.ISiteRoot"
+        class=".paginainicial.PaginaInicialView"
+        layer=".interfaces.IRCTheme"
+        permission="zope2.View"
+    />
+
+</configure>

@@ -1,0 +1,111 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="here/main_template/macros/master"
+    i18n:domain="rc.tema">
+    <head>
+        <metal:block fill-slot="top_slot"
+            tal:define="disable_column_one python:request.set('disable_plone.leftcolumn',1);
+                        disable_column_two python:request.set('disable_plone.rightcolumn',1);" />
+    </head>
+    <body>
+        <div metal:fill-slot="main">
+            <div id="paginainicial">
+                <!-- content body --> 
+                <!-- ########################################################################################## --> 
+                <!-- ########################################################################################## -->
+                <section id="slider">
+                    <div id="controls"> <a href="javascript:void(0)" class="prev"><img src="++theme++rc/layout/images/slider/prev.png" alt="Previous"></a> <a href="javascript:void(0)" class="next"><img src="++theme++rc/layout/images/slider/next.png" alt="Next"></a>
+                        <div class="slidescontainer"
+                             tal:define="items view/getDestaques"
+                             tal:condition="items">
+                            <tal:block repeat="item items">
+                                <figure class="slide">
+                                    <a href="#" tal:attributes="href item/getURL">
+                                        <img src="#" tal:attributes="src string:${item/getURL}/image_slider_home" width="940" height="460" alt="">
+                                    </a>
+                                    <figcaption class="caption">
+                                      <h2 tal:content="item/Title">Slide 1 Caption</h2>
+                                      <p tal:content="item/Description">Dapiensociis temper donec auctortortis cumsan et curabitur condis lorem loborttis leo. Ipsumcommodo libero nunc at in velis tincidunt pellentum tincidunt vel lorem pellus sed mauris enim.</p>
+                                    </figcaption>
+                                </figure>
+                            </tal:block>
+                        </div>
+                    </div>
+                </section>
+                <div id="homepage" class="clear"
+                     tal:define="items view/getSubDestaques"
+                     tal:condition="items"> 
+                    <!-- ########################################################################################## -->
+                    <section class="two_third first">
+                        <ul class="clear">
+                            <li tal:repeat="item items">
+                                <article>
+                                    <figure>
+                                        <img tal:attributes="src string:${item/getURL}/image_sub_destaque_home" width="200" height="150" alt="">
+                                        <figcaption>
+                                            <h2 tal:content="item/Title">Lorum ipsum dolor</h2>
+                                            <p tal:content="item/Description">Idenim semper pellente velis felit ac. Justoid nonummy laoreet phasellent penatoque.</p>
+                                            <footer>
+                                                <a href="#" tal:attributes="href item/getURL">
+                                                    Ver Detalhes &raquo;
+                                                </a>
+                                            </footer>
+                                        </figcaption>
+                                    </figure>
+                                </article>
+                            </li>
+                        </ul>
+                    </section>
+                    <!-- ########################################################################################## -->
+                    <!--<section class="one_third">
+                        <ul class="clear">
+                          <li>
+                            <article class="clear">
+                              <figure><img src="++theme++rc/images/demo/64x64.gif" alt=""></figure>
+                              <div>
+                                <h2><a href="#">Nequatdui laorem</a></h2>
+                                <p>Morbit incidunt maurisque eros molest nunc anteget sed vel lacus.</p>
+                              </div>
+                            </article>
+                          </li>
+                          <li>
+                            <article class="clear">
+                              <figure><img src="++theme++rc/images/demo/64x64.gif" alt=""></figure>
+                              <div>
+                                <h2><a href="#">Nequatdui laorem</a></h2>
+                                <p>Morbit incidunt maurisque eros molest nunc anteget sed vel lacus.</p>
+                              </div>
+                            </article>
+                          </li>
+                          <li>
+                            <article class="clear">
+                              <figure><img src="++theme++rc/images/demo/64x64.gif" alt=""></figure>
+                              <div>
+                                <h2><a href="#">Nequatdui laorem</a></h2>
+                                <p>Morbit incidunt maurisque eros molest nunc anteget sed vel lacus.</p>
+                              </div>
+                            </article>
+                          </li>
+                          <li>
+                            <article class="clear">
+                              <figure><img src="++theme++rc/images/demo/64x64.gif" alt=""></figure>
+                              <div>
+                                <h2><a href="#">Nequatdui laorem</a></h2>
+                                <p>Morbit incidunt maurisque eros molest nunc anteget sed vel lacus.</p>
+                              </div>
+                            </article>
+                          </li>
+                        </ul>
+                    </section>-->
+                    <!-- ########################################################################################## --> 
+                </div>
+                <!-- ########################################################################################## --> 
+                <!-- ########################################################################################## --> 
+                <!-- / content body --> 
+            </div>
+        </div>
+    </body>
+</html>

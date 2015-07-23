@@ -1,0 +1,26 @@
+@charset "utf-8";
+/*
+Template Name: Symfoni
+Author: <a href="http://www.os-templates.com/">OS Templates</a>
+Author URI: http://www.os-templates.com/
+Licence: Free to use under our free template licence terms
+Licence URI: http://www.os-templates.com/template-terms
+File: Slider CSS
+*/
+
+#slider{position:relative; display:block; width:940px; height:460px; margin:0 0 50px 0; padding:0; border:10px solid #FFFFFF;}
+#slider #controls{position:absolute; width:940px; height:460px;}
+#slider .next, #slider .prev{position:absolute; display:block; top:185px; left:0; width:24px; height:90px; background:none; z-index:101;}
+#slider .next{left:916px;}
+
+#slider #sliderpagination{position:absolute; display:block; top:0; width:100%; margin:0; padding:0; text-align:center; z-index:101;}
+#slider #sliderpagination ul, #slider #sliderpagination li{display:inline-block; margin:0; padding:0;}
+#slider #sliderpagination ul{padding:5px 15px; background-color:#FFFFFF; border-radius:0 0 10px 10px;}
+#slider #sliderpagination li a{display:inline-block; width:16px; height:0; margin:0 5px; padding:16px 0 0 0; background:url("../images/slider/sliderpagination.png") 0 0; overflow:hidden;}
+#slider #sliderpagination li a:hover, #slider #sliderpagination li.current a{background-position:0 -16px;}
+
+#slider .caption{position:absolute; bottom:30px; left:50px; width:360px; height:150px; padding:15px; color:#FFFFFF; background:#000000;}
+#slider .caption{background-color:hsla(0, 0%, 0%, 0.7);}
+#slider .caption h2, #slider .caption p{margin:0; padding:0; color:#FFFFFF; background-color:transparent;}
+#slider .caption h2{margin-bottom:15px; font-size:24px; font-weight:normal;}
+#slider .caption p{line-height:1.8em;}

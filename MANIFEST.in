@@ -1,0 +1,2 @@
+recursive-include rc *
+global-exclude *pyc
